@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 class Stack:
     def __init__(self):
         self.items = []
@@ -29,3 +30,6 @@ print(stack.peek())
 =======
 
 >>>>>>> 4a1d78030ff4edb328f0a3eda5e88afeae75a50b
+=======
+
+>>>>>>> 1cc2a77af8da8febd47a62b2a143fc4226b5ff69

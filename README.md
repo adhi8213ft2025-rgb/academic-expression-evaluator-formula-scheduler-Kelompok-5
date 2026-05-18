@@ -50,31 +50,6 @@ Menggunakan struktur data Stack untuk pengelolaan operator.
 
 📂 Struktur Direktori
 
-📁 Academic-Expression-Evaluator-Formula-Scheduler/
-├── 📄 README.md                 # Dokumentasi Proyek
-├── 📁 src/                      # Source Code Utama
-│   ├── 📄 main.py               # Entry Point 
-│   ├── 📁 data_structures/      # Struktur Data Murni (From Scratch)
-│   │   ├── linked_list.py
-│   │   ├── stack.py
-│   │   ├── queue_ll.py
-|   |   |── bst.py
-|   |   |──graph.py
-│   ├── 📁 modules/              # Implementasi Algoritma
-│   │   ├── modul_1_BST_Tabel_Variabel.py
-│   │   ├── modul_2_CLI_Kalkulator.py
-│   │   ├── modul_3_Evaluasi_Postfix.py
-│   │   ├── modul_4_Expression_Tree(BinaryTree).py
-│   │   ├── modul_5_Graph_Dependensi_Formula(GDF).py
-|   |   |── MODUL_6_kONVERSI_Infix_Ke_Postfix.py
-├── 📁 experiments/              # Skrip Uji Coba Performa
-│   └── 📄 benchmark.py          
-├── 📁 docs/                     # Berkas Laporan Laporan
-│   ├── Laporan_Final.pdf
-│   └── Slide_Presentasi.pdf
-└── 📁 AI_Log/                   # Log Penggunaan AI Assistant
-    ├── Log_prompt.txt
-    └── screenshots/
 <img width="978" height="489" alt="Cuplikan layar 2026-05-18 180335" src="https://github.com/user-attachments/assets/5898c19b-b677-4cea-a9f3-ba014fc43099" />
 
 

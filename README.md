@@ -75,5 +75,6 @@ Menggunakan struktur data Stack untuk pengelolaan operator.
 └── 📁 AI_Log/                   # Log Penggunaan AI Assistant
     ├── Log_prompt.txt
     └── screenshots/
+<img width="978" height="489" alt="Cuplikan layar 2026-05-18 180335" src="https://github.com/user-attachments/assets/5898c19b-b677-4cea-a9f3-ba014fc43099" />
 
 

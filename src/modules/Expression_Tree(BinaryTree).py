@@ -1,98 +1,84 @@
-<<<<<<< HEAD
 from typing import Optional, List
 
-# Contoh operator dan fungsi
+# Konstanta
 PREC = {'+': 1, '-': 1, '*': 2, '/': 2, '^': 3}
-FUNCS = {'sin', 'cos', 'sqrt', 'log'}
+FUNCS = {'sin', 'cos', 'tan', 'log', 'sqrt'}
 
-# Node Linked List untuk Stack
-class LLNode:
-    def __init__(self, data=None):
-        self.data = data
-        self.next = None
 
-# Stack Linked List
 class Stack:
     def __init__(self):
-        self.top = None
+        self.items = []
 
-    def push(self, data):
-        node = LLNode(data)
-        node.next = self.top
-        self.top = node
+    def push(self, item):
+        self.items.append(item)
 
     def pop(self):
-        if self.top is None:
-            return None
+        if not self.items:
+            raise IndexError("Stack is empty")
+        return self.items.pop()
 
-        value = self.top.data
-        self.top = self.top.next
-        return value
+    def peek(self):
+        if not self.items:
+            raise IndexError("Stack is empty")
+        return self.items[-1]
 
     def is_empty(self):
-        return self.top is None
+        return len(self.items) == 0
 
 
-# Expression Tree Node
 class ExprNode:
-    def __init__(self, value):
+    def __init__(self, value):          # ← Fix: '_init_' → '__init__'
         self.value = value
         self.left: Optional['ExprNode'] = None
         self.right: Optional['ExprNode'] = None
 
 
-# Build Expression Tree dari postfix
 def build_expr_tree(postfix: List[str]) -> Optional[ExprNode]:
     stack = Stack()
 
     for tok in postfix:
-
-        # Operand angka atau variabel
         if tok.replace('.', '', 1).isdigit() or (
             tok.isalpha() and tok not in FUNCS
         ):
             stack.push(ExprNode(tok))
 
-        # Operator binary
         elif tok in PREC:
             node = ExprNode(tok)
-
             node.right = stack.pop()
             node.left = stack.pop()
-
             stack.push(node)
 
-        # Fungsi unary
         elif tok in FUNCS:
             node = ExprNode(tok)
-
             node.right = stack.pop()
-
             stack.push(node)
 
     return stack.pop()
 
 
-# Traversal inorder
-def inorder(root):
-    if root is None:
-        return ""
-
-    if root.value in PREC:
-        return f"({inorder(root.left)} {root.value} {inorder(root.right)})"
-
-    elif root.value in FUNCS:
-        return f"{root.value}({inorder(root.right)})"
-
-    return str(root.value)
+# Fungsi bantu untuk print tree (opsional, untuk testing)
+def print_tree(node: Optional[ExprNode], level: int = 0, prefix: str = "Root: "):
+    if node is not None:
+        print(" " * (level * 4) + prefix + str(node.value))
+        if node.left or node.right:
+            if node.left:
+                print_tree(node.left, level + 1, "L--- ")
+            if node.right:
+                print_tree(node.right, level + 1, "R--- ")
 
 
-# Contoh postfix
-postfix = ['a', 'b', '+', 'c', '*']
+# Contoh penggunaan
+if __name__ == "__main__":
+    # Contoh postfix dari: 3 + 4 * 2
+    postfix1 = ["3", "4", "2", "*", "+"]
+    tree1 = build_expr_tree(postfix1)
+    print("Tree untuk '3 + 4 * 2':")
+    print_tree(tree1)
 
-root = build_expr_tree(postfix)
+    print()
 
-print("Hasil Inorder:", inorder(root))
-=======
-
->>>>>>> 4a1d78030ff4edb328f0a3eda5e88afeae75a50b
+    # Contoh postfix dari: sin(x) + 2
+    postfix2 = ["x", "sin", "2", "+"]
+    tree2 = build_expr_tree(postfix2)
+    print("Tree untuk 'sin(x) + 2':")
+    print_tree(tree2)

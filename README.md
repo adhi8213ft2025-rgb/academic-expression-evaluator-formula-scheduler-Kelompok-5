@@ -17,8 +17,36 @@ NIM                        Nama Lengkap
 25051030123     LUCKY MAYLANDRA NUR SALEH          
 =======================================================
 
-✨ Fitur & Modul Utama
+🧩 Modul Sistem (6 Modul Fungsional Terintegrasi)
+
 Sistem ini dipecah menjadi 6 modul fungsional yang saling terintegrasi:
+
+1. Modul 1: BST Tabel Variabel
+Menggunakan Binary Search Tree (BST) untuk penyimpanan variabel secara terurut.
+Mendukung operasi insert, search, dan update variabel.
+Kompleksitas pencarian rata-rata:
+O(logn)
+2. Modul 2: CLI Kalkulator
+Antarmuka berbasis Command Line Interface (CLI) untuk input ekspresi matematika.
+Mendukung evaluasi formula interaktif dan penanganan error (error handling).
+Memudahkan pengguna menjalankan operasi secara real-time.
+3. Modul 3: Evaluasi_Postfix
+Mengevaluasi ekspresi postfix menggunakan struktur data Stack.
+Mendukung operator aritmatika dasar seperti +, -, *, /, dan ^.
+Kompleksitas evaluasi ekspresi:
+O(n)
+4. Modul 4: Expression_Tree (Binary Tree)
+Merepresentasikan ekspresi matematika dalam bentuk Binary Expression Tree.
+Digunakan untuk proses traversal preorder, inorder, dan postorder.
+Mempermudah visualisasi struktur operasi matematika.
+5. Modul 5: Graph_Dependensi_Formula (DAG)
+Menggunakan Directed Acyclic Graph (DAG) untuk memodelkan dependensi antar formula.
+Mendukung proses topological sorting untuk menentukan urutan evaluasi formula.
+Deteksi siklus digunakan untuk mencegah dependensi melingkar (cyclic dependency).
+6. Modul 6: Konversi_Infix_Ke_Postfix
+Mengimplementasikan algoritma Shunting-Yard untuk konversi ekspresi.
+Mengubah ekspresi infix menjadi postfix berdasarkan prioritas operator.
+Menggunakan struktur data Stack untuk pengelolaan operator.
 
 
 

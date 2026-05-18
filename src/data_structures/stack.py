@@ -1,159 +1,114 @@
-<<<<<<< HEAD
-class Stack:
+from typing import Any, Optional
+
+class Node:
+    """Kelas untuk merepresentasikan satu node dalam Linked List."""
+    def __init__(self, data: Any):
+        self.data: Any = data
+        self.next: Optional[Node] = None
+
+class SinglyLinkedList:
+    """Kelas Linked List sebagai fondasi penyimpanan Stack."""
     def __init__(self):
-        self.items = []
+        self.head: Optional[Node] = None
+        self.tail: Optional[Node] = None
+        self.size: int = 0
 
-    # O(1)
-    def push(self, item):
-        self.items.append(item)
+    def add_front(self, data: Any) -> None:
+        """Menambahkan elemen di depan (Top of Stack)."""
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            new_node.next = self.head
+            self.head = new_node
+        self.size += 1
 
-    # O(1)
-    def pop(self):
-        if not self.is_empty():
-            return self.items.pop()
-
-    # O(1)
-    def peek(self):
-        if not self.is_empty():
-            return self.items[-1]
-
-    def is_empty(self):
-        return len(self.items) == 0
-
-
-stack = Stack()
-stack.push(10)
-stack.push(20)
-print(stack.pop())
-print(stack.peek())
-=======
-import math
-
-# Operator precedence
-PREC = {
-    '+': 2,
-    '-': 2,
-    '*': 3,
-    '/': 3,
-    '^': 4
-}
-
-# Fungsi matematika
-FUNCS = {
-    'sin': math.sin,
-    'cos': math.cos,
-    'sqrt': math.sqrt,
-    'log': math.log,
-    'abs': abs
-}
-
-
-# ── Node Linked List ─────────────────────────────
-
-class LLNode:
-    def __init__(self, data=None):
-        self.data = data
-        self.next = None
-
-
-# ── Stack Linked List ────────────────────────────
-
-class Stack:
-    def __init__(self):
-        self.top = None
-
-    def push(self, data):
-        node = LLNode(data)
-        node.next = self.top
-        self.top = node
-
-    def pop(self):
-        if self.top is None:
-            return None
-
-        val = self.top.data
-        self.top = self.top.next
+    def remove_front(self) -> Any:
+        """Menghapus elemen di depan dan mengembalikan nilainya."""
+        if self.head is None:
+            raise IndexError("List kosong")
+        
+        val = self.head.data
+        self.head = self.head.next
+        
+        if self.head is None:
+            self.tail = None
+            
+        self.size -= 1
         return val
 
-    def is_empty(self):
-        return self.top is None
+    def __len__(self) -> int:
+        return self.size
 
-    def to_list(self):
-        result = []
-        cur = self.top
-
-        while cur:
-            result.append(cur.data)
-            cur = cur.next
-
-        return result[::-1]
+    def __repr__(self) -> str:
+        nodes = []
+        current = self.head
+        while current:
+            nodes.append(str(current.data))
+            current = current.next
+        return " -> ".join(nodes) if nodes else "Empty"
 
 
-# ── Evaluasi Postfix ─────────────────────────────
+class Stack:
+    """Implementasi Stack yang aman dan bebas error."""
+    def __init__(self):
+        self._list = SinglyLinkedList()
 
-def evaluate_postfix(postfix, variables):
+    def push(self, data: Any) -> None:
+        """Menambahkan data ke dalam stack."""
+        self._list.add_front(data)
 
-    stack = Stack()
+    def pop(self) -> Any:
+        """Mengambil dan menghapus data teratas dari stack."""
+        if self.is_empty():
+            raise IndexError("Stack kosong")
+        return self._list.remove_front()
 
-    for token in postfix:
+    def peek(self) -> Any:
+        """Melihat data teratas dari stack tanpa menghapusnya."""
+        if self.is_empty():
+            raise IndexError("Stack kosong")
+        if self._list.head is not None:
+            return self._list.head.data
 
-        # Jika angka
-        if token.replace('.', '', 1).isdigit():
-            stack.push(float(token))
+    def is_empty(self) -> bool:
+        """Memeriksa apakah stack kosong."""
+        return len(self._list) == 0
 
-        # Jika variabel
-        elif token.isalpha() and token not in FUNCS:
-            stack.push(float(variables[token]))
+    def __len__(self) -> int:
+        """Mengembalikan jumlah elemen di dalam stack."""
+        return len(self._list)
 
-        # Jika operator
-        elif token in PREC:
-
-            operand2 = stack.pop()
-            operand1 = stack.pop()
-
-            if token == '+':
-                result = operand1 + operand2
-
-            elif token == '-':
-                result = operand1 - operand2
-
-            elif token == '*':
-                result = operand1 * operand2
-
-            elif token == '/':
-                result = operand1 / operand2
-
-            elif token == '^':
-                result = operand1 ** operand2
-
-            stack.push(result)
-
-        # Jika fungsi matematika
-        elif token in FUNCS:
-
-            arg = stack.pop()
-            result = FUNCS[token](arg)
-
-            stack.push(result)
-
-        # Trace stack
-        print(f"Token: {token}")
-        print("Stack:", stack.to_list())
-        print("-" * 30)
-
-    return stack.pop()
+    def __repr__(self) -> str:
+        """Representasi visual isi stack."""
+        return f"Stack(top -> {self._list})"
 
 
-# ── Contoh Penggunaan ────────────────────────────
+# ==========================================
+# CONTOH PENGUJIAN (Bisa langsung dijalankan)
+# ==========================================
+if __name__ == "__main__":
+    print("--- Memulai Pengujian Stack ---")
+    tumpukan = Stack()
+    
+    # 1. Uji push data
+    tumpukan.push("Data_A")
+    tumpukan.push("Data_B")
+    tumpukan.push("Data_C")
+    print("Isi awal:", tumpukan) 
+    # Output: Stack(top -> Data_C -> Data_B -> Data_A)
 
-postfix = ['a', '2', '^', 'b', '2', '^', '+']
+    # 2. Uji peek data
+    print("Data teratas saat ini (peek):", tumpukan.peek()) 
+    # Output: Data_C
 
-variables = {
-    'a': 3,
-    'b': 4
-}
+    # 3. Uji pop data
+    print("Data yang dikeluarkan (pop):", tumpukan.pop()) 
+    # Output: Data_C
+    print("Isi setelah di-pop:", tumpukan) 
+    # Output: Stack(top -> Data_B -> Data_A)
 
-hasil = evaluate_postfix(postfix, variables)
-
-print("Hasil akhir =", hasil)
->>>>>>> feat/fahreza
+    # 4. Uji jumlah data
+    print("Jumlah elemen:", len(tumpukan)) 
+    # Output: 2

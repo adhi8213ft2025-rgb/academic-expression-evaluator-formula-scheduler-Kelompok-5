@@ -8,14 +8,11 @@ Sistem ini dirancang untuk membantu dosen dan mahasiswa dalam mengevaluasi ekspr
 Selain itu, modul Formula Scheduler memanfaatkan struktur data seperti Stack, Queue, Tree, dan Graph (DAG) untuk mengatur urutan evaluasi formula berdasarkan dependensi dan prioritas proses. Seluruh struktur data dibangun secara murni (from scratch) tanpa menggunakan pustaka koleksi bawaan Python guna mendemonstrasikan pemahaman fundamental algoritma.
 
 👥 Tim Pengembang (Kelompok)
-=======================================================
 NIM                        Nama Lengkap                       
-=======================================================
 25051030093     Adhi Suryo Kuncoro                 
 25051030097     Raihan fahreza augustha            
 25051030106     MUHAMMAD FAUZAN NUR PRIBOWO        
 25051030123     LUCKY MAYLANDRA NUR SALEH          
-=======================================================
 
 🧩 Modul Sistem (6 Modul Fungsional Terintegrasi)
 
@@ -50,6 +47,10 @@ Menggunakan struktur data Stack untuk pengelolaan operator.
 
 📂 Struktur Direktori
 
+HEAD
 <img width="978" height="489" alt="Cuplikan layar 2026-05-18 180335" src="https://github.com/user-attachments/assets/5898c19b-b677-4cea-a9f3-ba014fc43099" />
+
+<img width="978" height="489" alt="Cuplikan layar 2026-05-18 180335" src="https://github.com/user-attachments/assets/d13107fe-2e9c-450a-a7ec-71b76ef674b2" />
+ main
 
 

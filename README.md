@@ -18,3 +18,7 @@ NIM                        Nama Lengkap
 =======================================================
 
 ✨ Fitur & Modul Utama
+Sistem ini dipecah menjadi 6 modul fungsional yang saling terintegrasi:
+
+
+

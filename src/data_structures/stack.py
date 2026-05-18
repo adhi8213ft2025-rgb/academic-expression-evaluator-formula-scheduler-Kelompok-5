@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class Stack:
     def __init__(self):
         self.items = []
@@ -25,3 +26,6 @@ stack.push(10)
 stack.push(20)
 print(stack.pop())
 print(stack.peek())
+=======
+
+>>>>>>> 4a1d78030ff4edb328f0a3eda5e88afeae75a50b

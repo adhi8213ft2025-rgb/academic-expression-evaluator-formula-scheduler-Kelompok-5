@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from typing import Optional, List
 
 # Contoh operator dan fungsi
@@ -92,3 +93,6 @@ postfix = ['a', 'b', '+', 'c', '*']
 root = build_expr_tree(postfix)
 
 print("Hasil Inorder:", inorder(root))
+=======
+
+>>>>>>> 4a1d78030ff4edb328f0a3eda5e88afeae75a50b

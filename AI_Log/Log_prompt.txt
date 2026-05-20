@@ -1,0 +1,2 @@
+Berikan saya tata cara urut menginstall git lalu dihubungkan dengan github agar bisa digunakan secara berkelompok
+Perintah cara mengganti tujuan dari main ke branch setelah upload kode

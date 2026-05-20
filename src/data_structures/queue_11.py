@@ -1,163 +1,186 @@
 # =========================================================
 # queue_11.py
 # Academic Expression Evaluator & Formula Scheduler
-# Materi: Struktur Data Queue (FIFO)
+# Materi Struktur Data Queue (FIFO)
 # =========================================================
 
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
+from collections import deque
+import math
 
 
+# =========================================================
+# CLASS FORMULA TASK
+# =========================================================
+class FormulaTask:
+    def __init__(self, name, expression):
+        self.name = name
+        self.expression = expression
+
+    def __str__(self):
+        return f"{self.name} = {self.expression}"
+
+
+# =========================================================
+# QUEUE IMPLEMENTATION
+# =========================================================
 class Queue:
     def __init__(self):
-        self.front = None
-        self.rear = None
-        self.size = 0
+        self.items = deque()
 
-    # =========================
     # ENQUEUE
-    # =========================
-    def enqueue(self, data):
-        new_node = Node(data)
+    def enqueue(self, item):
+        self.items.append(item)
 
-        if self.rear is None:
-            self.front = self.rear = new_node
-        else:
-            self.rear.next = new_node
-            self.rear = new_node
-
-        self.size += 1
-        print(f"[+] Formula '{data}' masuk ke scheduler.")
-
-    # =========================
     # DEQUEUE
-    # =========================
     def dequeue(self):
-        if self.is_empty():
-            print("[!] Queue kosong.")
-            return None
+        if not self.is_empty():
+            return self.items.popleft()
+        return None
 
-        removed = self.front.data
-        self.front = self.front.next
-
-        if self.front is None:
-            self.rear = None
-
-        self.size -= 1
-
-        print(f"[-] Formula '{removed}' diproses.")
-        return removed
-
-    # =========================
-    # PEEK
-    # =========================
-    def peek(self):
-        if self.is_empty():
-            print("[!] Queue kosong.")
-            return None
-
-        return self.front.data
-
-    # =========================
     # CHECK EMPTY
-    # =========================
     def is_empty(self):
-        return self.front is None
+        return len(self.items) == 0
 
-    # =========================
     # DISPLAY QUEUE
-    # =========================
     def display(self):
         if self.is_empty():
-            print("\n[ Queue Kosong ]")
+            print("\nQueue kosong.")
+        else:
+            print("\n=== DAFTAR FORMULA DALAM QUEUE ===")
+            for i, item in enumerate(self.items, start=1):
+                print(f"{i}. {item}")
+
+    # SIZE
+    def size(self):
+        return len(self.items)
+
+
+# =========================================================
+# EXPRESSION EVALUATOR
+# =========================================================
+class ExpressionEvaluator:
+
+    @staticmethod
+    def evaluate(expression):
+        """
+        Mengevaluasi ekspresi matematika sederhana.
+        Mendukung:
+        +, -, *, /, %, **
+        sqrt(), sin(), cos(), tan(), log()
+        """
+
+        allowed_names = {
+            "sqrt": math.sqrt,
+            "sin": math.sin,
+            "cos": math.cos,
+            "tan": math.tan,
+            "log": math.log,
+            "pi": math.pi,
+            "e": math.e
+        }
+
+        try:
+            result = eval(expression, {"__builtins__": None}, allowed_names)
+            return result
+        except Exception as e:
+            return f"Error: {e}"
+
+
+# =========================================================
+# FORMULA SCHEDULER
+# =========================================================
+class FormulaScheduler:
+
+    def __init__(self):
+        self.queue = Queue()
+
+    # TAMBAH FORMULA
+    def add_formula(self, name, expression):
+        task = FormulaTask(name, expression)
+        self.queue.enqueue(task)
+        print(f"\nFormula '{name}' berhasil ditambahkan ke queue.")
+
+    # PROSES FORMULA FIFO
+    def process_formula(self):
+
+        if self.queue.is_empty():
+            print("\nTidak ada formula dalam queue.")
             return
 
-        current = self.front
+        task = self.queue.dequeue()
 
-        print("\n=== FORMULA SCHEDULER QUEUE ===")
+        print("\n================================")
+        print(f"Memproses Formula : {task.name}")
+        print(f"Ekspresi          : {task.expression}")
 
-        nomor = 1
+        result = ExpressionEvaluator.evaluate(task.expression)
 
-        while current:
-            print(f"{nomor}. {current.data}")
-            current = current.next
-            nomor += 1
+        print(f"Hasil             : {result}")
+        print("================================")
 
-        print("===============================\n")
-
-    # =========================
-    # TOTAL DATA
-    # =========================
-    def total_data(self):
-        return self.size
+    # TAMPILKAN SEMUA FORMULA
+    def show_formulas(self):
+        self.queue.display()
 
 
 # =========================================================
 # MAIN PROGRAM
 # =========================================================
+def main():
 
-def menu():
-    print("==========================================")
-    print(" Academic Expression Evaluator Scheduler ")
-    print("==========================================")
-    print("1. Tambah Formula ke Queue")
-    print("2. Proses Formula")
-    print("3. Lihat Antrian Formula")
-    print("4. Formula Terdepan")
-    print("5. Total Formula")
-    print("0. Keluar")
-    print("==========================================")
+    scheduler = FormulaScheduler()
+
+    while True:
+
+        print("\n========================================")
+        print(" Academic Expression Evaluator")
+        print(" Formula Scheduler - Queue FIFO")
+        print("========================================")
+        print("1. Tambah Formula")
+        print("2. Proses Formula")
+        print("3. Tampilkan Queue")
+        print("4. Keluar")
+
+        choice = input("\nPilih menu: ")
+
+        # =====================================
+        # TAMBAH FORMULA
+        # =====================================
+        if choice == "1":
+
+            name = input("Nama Formula : ")
+            expression = input("Ekspresi     : ")
+
+            scheduler.add_formula(name, expression)
+
+        # =====================================
+        # PROSES FORMULA
+        # =====================================
+        elif choice == "2":
+
+            scheduler.process_formula()
+
+        # =====================================
+        # TAMPILKAN QUEUE
+        # =====================================
+        elif choice == "3":
+
+            scheduler.show_formulas()
+
+        # =====================================
+        # EXIT
+        # =====================================
+        elif choice == "4":
+
+            print("\nProgram selesai.")
+            break
+
+        else:
+            print("\nPilihan tidak valid.")
 
 
-scheduler = Queue()
-
-while True:
-    menu()
-
-    pilih = input("Pilih menu : ")
-
-    # =====================================
-    # TAMBAH FORMULA
-    # =====================================
-    if pilih == "1":
-        formula = input("Masukkan formula : ")
-        scheduler.enqueue(formula)
-
-    # =====================================
-    # PROSES FORMULA
-    # =====================================
-    elif pilih == "2":
-        scheduler.dequeue()
-
-    # =====================================
-    # TAMPILKAN QUEUE
-    # =====================================
-    elif pilih == "3":
-        scheduler.display()
-
-    # =====================================
-    # LIHAT DEPAN
-    # =====================================
-    elif pilih == "4":
-        depan = scheduler.peek()
-
-        if depan:
-            print(f"\nFormula berikutnya : {depan}\n")
-
-    # =====================================
-    # TOTAL DATA
-    # =====================================
-    elif pilih == "5":
-        print(f"\nTotal formula dalam queue : {scheduler.total_data()}\n")
-
-    # =====================================
-    # KELUAR
-    # =====================================
-    elif pilih == "0":
-        print("\nProgram selesai.")
-        break
-
-    else:
-        print("\n[!] Menu tidak valid.\n")
+# =========================================================
+# RUN PROGRAM
+# =========================================================
+if __name__ == "__main__":
+    main()

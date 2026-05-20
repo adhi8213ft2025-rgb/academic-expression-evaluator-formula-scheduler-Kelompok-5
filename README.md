@@ -47,10 +47,4 @@ Menggunakan struktur data Stack untuk pengelolaan operator.
 
 📂 Struktur Direktori
 
-HEAD
 <img width="978" height="489" alt="Cuplikan layar 2026-05-18 180335" src="https://github.com/user-attachments/assets/5898c19b-b677-4cea-a9f3-ba014fc43099" />
-
-<img width="978" height="489" alt="Cuplikan layar 2026-05-18 180335" src="https://github.com/user-attachments/assets/d13107fe-2e9c-450a-a7ec-71b76ef674b2" />
- main
-
-

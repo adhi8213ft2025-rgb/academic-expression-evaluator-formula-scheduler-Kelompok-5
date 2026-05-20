@@ -2,7 +2,7 @@ from src.data_structures.stack import Stack
 
 
 def test_push():
-    """Test push pada stack."""
+    """Test operasi push."""
     s = Stack()
 
     s.push("Data_A")
@@ -13,7 +13,7 @@ def test_push():
 
 
 def test_pop():
-    """Test pop pada stack."""
+    """Test operasi pop."""
     s = Stack()
 
     s.push("Data_X")
@@ -27,7 +27,7 @@ def test_pop():
 
 
 def test_peek():
-    """Test peek pada stack."""
+    """Test operasi peek."""
     s = Stack()
 
     s.push(100)

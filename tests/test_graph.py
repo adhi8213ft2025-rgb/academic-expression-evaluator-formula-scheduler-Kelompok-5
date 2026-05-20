@@ -266,4 +266,8 @@ class TestAcademicFormulaGraph(unittest.TestCase):
 # =========================================================
 if __name__ == "__main__":
 
+<<<<<<< HEAD
     unittest.main()
+=======
+    unittest.main()
+>>>>>>> 674001a50a912b3b1ddff3596ca9dc867759a03b

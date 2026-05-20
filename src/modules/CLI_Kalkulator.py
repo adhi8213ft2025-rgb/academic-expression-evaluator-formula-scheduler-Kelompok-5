@@ -1,6 +1,4 @@
 
-<<<<<<< HEAD
-=======
 
 # =========================
 # NODE TREE
@@ -312,4 +310,4 @@ def jalankan_kalkulator_cli():
 
 if __name__ == "__main__":
     jalankan_kalkulator_cli()
->>>>>>> f910f79 (update)
+

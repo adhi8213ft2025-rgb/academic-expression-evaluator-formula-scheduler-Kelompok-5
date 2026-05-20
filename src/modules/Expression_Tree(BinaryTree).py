@@ -82,3 +82,4 @@ if __name__ == "__main__":
     tree2 = build_expr_tree(postfix2)
     print("Tree untuk 'sin(x) + 2':")
     print_tree(tree2)
+    # update

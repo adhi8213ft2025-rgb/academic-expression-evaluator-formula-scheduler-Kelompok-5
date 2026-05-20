@@ -1,10 +1,5 @@
 from typing import List
 
-<<<<<<< HEAD
-from typing import List
-
-=======
->>>>>>> ea9aeb999094f858a5404988975d10c62f6be204
 # Prioritas operator
 PREC = {
     '+': 1,
@@ -115,8 +110,4 @@ tokens = ['a', '+', 'b', '*', 'c']
 hasil = infix_to_postfix(tokens)
 
 print("Postfix:")
-<<<<<<< HEAD
 print(" ".join(hasil))
-=======
-print(" ".join(hasil))
->>>>>>> ea9aeb999094f858a5404988975d10c62f6be204

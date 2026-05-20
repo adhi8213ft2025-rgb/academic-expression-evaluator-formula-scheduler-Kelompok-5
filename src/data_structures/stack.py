@@ -112,3 +112,4 @@ if __name__ == "__main__":
     # 4. Uji jumlah data
     print("Jumlah elemen:", len(tumpukan)) 
     # Output: 2
+    # Upadte Fauzan

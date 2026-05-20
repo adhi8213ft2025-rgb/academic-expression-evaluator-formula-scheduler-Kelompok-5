@@ -19,27 +19,16 @@ NIM                        Nama Lengkap
 Sistem ini dipecah menjadi 6 modul fungsional yang saling terintegrasi:
 
 1. Modul 1: BST Tabel Variabel disusun oleh (Lucky)
-<<<<<<< HEAD
 Menggunakan Binary Search Tree (BST) untuk penyimpanan variabel secara terurut.
 Mendukung operasi insert, search, dan update variabel.
 Kompleksitas pencarian rata-rata:
 O(logn)
 
 3. Modul 2: CLI Kalkulator disusun oleh (Lucky)
-=======
-
-Menggunakan Binary Search Tree (BST) untuk penyimpanan variabel secara terurut.
-Mendukung operasi insert, search, dan update variabel.
-Kompleksitas pencarian rata-rata: O(logn)
-
-2. Modul 2: CLI Kalkulator disusun oleh (Lucky)
-
->>>>>>> 9339ed0158c39b6a6ced834eac2396d2f605a221
 Antarmuka berbasis Command Line Interface (CLI) untuk input ekspresi matematika.
 Mendukung evaluasi formula interaktif dan penanganan error (error handling).
 Memudahkan pengguna menjalankan operasi secara real-time.
 
-<<<<<<< HEAD
 5. Modul 3: Evaluasi_Postfix disusun oleh (Fahreza) 
 Mengevaluasi ekspresi postfix menggunakan struktur data Stack.
 Mendukung operator aritmatika dasar seperti +, -, *, /, dan ^.
@@ -47,47 +36,21 @@ Kompleksitas evaluasi ekspresi:
 O(n)
 
 7. Modul 4: Expression_Tree (Binary Tree) disusun oleh (Fauzan)
-=======
-3. Modul 3: Evaluasi_Postfix disusun oleh (Fahreza)
-
-Mengevaluasi ekspresi postfix menggunakan struktur data Stack.
-Mendukung operator aritmatika dasar seperti +, -, *, /, dan ^.
-Kompleksitas evaluasi ekspresi: O(n)
-
-4. Modul 4: Expression_Tree (Binary Tree) disusun oleh (Fauzan)
-
->>>>>>> 9339ed0158c39b6a6ced834eac2396d2f605a221
 Merepresentasikan ekspresi matematika dalam bentuk Binary Expression Tree.
 Digunakan untuk proses traversal preorder, inorder, dan postorder.
 Mempermudah visualisasi struktur operasi matematika.
 
-<<<<<<< HEAD
 9. Modul 5: Graph_Dependensi_Formula (DAG) disusun oleh (Fahreza)
 Menggunakan Directed Acyclic Graph (DAG) untuk memodelkan dependensi antar formula.
 Mendukung proses topological sorting untuk menentukan urutan evaluasi formula.
 Deteksi siklus digunakan untuk mencegah dependensi melingkar (cyclic dependency).
 
 11. Modul 6: Konversi_Infix_Ke_Postfix disusun oleh (Adhi)
-=======
-5. Modul 5: Graph_Dependensi_Formula (DAG) disusun oleh (Fahreza)
-
-Menggunakan Directed Acyclic Graph (DAG) untuk memodelkan dependensi antar formula.
-Mendukung proses topological sorting untuk menentukan urutan evaluasi formula.
-Deteksi siklus digunakan untuk mencegah dependensi melingkar (cyclic dependency).
-6. Modul 6: Konversi_Infix_Ke_Postfix disusun oleh (Adhi)
-
->>>>>>> 9339ed0158c39b6a6ced834eac2396d2f605a221
 Mengimplementasikan algoritma Shunting-Yard untuk konversi ekspresi.
 Mengubah ekspresi infix menjadi postfix berdasarkan prioritas operator.
 Menggunakan struktur data Stack untuk pengelolaan operator.
 
 # 📂 Struktur Direktori
 
+HEAD
 <img width="978" height="489" alt="Cuplikan layar 2026-05-18 180335" src="https://github.com/user-attachments/assets/5898c19b-b677-4cea-a9f3-ba014fc43099" />
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> 9339ed0158c39b6a6ced834eac2396d2f605a221

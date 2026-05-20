@@ -223,85 +223,91 @@ def postorder(node):
 
 
 # =========================
-# MAIN PROGRAM
+# MAIN PROGRAM (DIBUNGKUS)
 # =========================
-print("Perintah:")
-print("SET <var> <nilai>")
-print("DEFINE <ekspresi>")
-print("EVAL <ekspresi>")
-print("TREE <ekspresi>")
-print("EXIT")
-print()
+def jalankan_kalkulator_cli():
 
-while True:
+    print("Perintah:")
+    print("SET <var> <nilai>")
+    print("DEFINE <ekspresi>")
+    print("EVAL <ekspresi>")
+    print("TREE <ekspresi>")
+    print("EXIT")
+    print()
 
-    command = input(">> ")
+    while True:
 
-    if command.upper() == "EXIT":
-        break
+        command = input(">> ")
 
-    parts = command.split()
+        if command.upper() == "EXIT":
+            break
 
-    # =====================
-    # SET
-    # =====================
-    if parts[0].upper() == "SET":
+        parts = command.split()
 
-        var = parts[1]
-        value = float(parts[2])
+        # =====================
+        # SET
+        # =====================
+        if parts[0].upper() == "SET":
 
-        variables[var] = value
+            var = parts[1]
+            value = float(parts[2])
 
-        print(f"Variabel {var} = {value}")
+            variables[var] = value
 
-    # =====================
-    # DEFINE
-    # =====================
-    elif parts[0].upper() == "DEFINE":
+            print(f"Variabel {var} = {value}")
 
-        defined_expression = " ".join(parts[1:])
+        # =====================
+        # DEFINE
+        # =====================
+        elif parts[0].upper() == "DEFINE":
 
-        print("Ekspresi disimpan.")
+            defined_expression = " ".join(parts[1:])
 
-    # =====================
-    # EVAL
-    # =====================
-    elif parts[0].upper() == "EVAL":
+            print("Ekspresi disimpan.")
 
-        expression = " ".join(parts[1:])
+        # =====================
+        # EVAL
+        # =====================
+        elif parts[0].upper() == "EVAL":
 
-        postfix = infix_to_postfix(expression)
+            expression = " ".join(parts[1:])
 
-        result = evaluate_postfix(postfix)
+            postfix = infix_to_postfix(expression)
 
-        print("Postfix =", " ".join(postfix))
-        print("Hasil =", result)
+            result = evaluate_postfix(postfix)
 
-    # =====================
-    # TREE
-    # =====================
-    elif parts[0].upper() == "TREE":
+            print("Postfix =", " ".join(postfix))
+            print("Hasil =", result)
 
-        expression = " ".join(parts[1:])
+        # =====================
+        # TREE
+        # =====================
+        elif parts[0].upper() == "TREE":
 
-        postfix = infix_to_postfix(expression)
+            expression = " ".join(parts[1:])
 
-        root = build_expression_tree(postfix)
+            postfix = infix_to_postfix(expression)
 
-        print("Inorder  :", end=" ")
-        inorder(root)
+            root = build_expression_tree(postfix)
 
-        print()
+            print("Inorder  :", end=" ")
+            inorder(root)
 
-        print("Preorder :", end=" ")
-        preorder(root)
+            print()
 
-        print()
+            print("Preorder :", end=" ")
+            preorder(root)
 
-        print("Postorder:", end=" ")
-        postorder(root)
+            print()
 
-        print()
+            print("Postorder:", end=" ")
+            postorder(root)
 
-    else:
-        print("Perintah tidak dikenali.")
+            print()
+
+        else:
+            print("Perintah tidak dikenali.")
+
+
+if __name__ == "__main__":
+    jalankan_kalkulator_cli()

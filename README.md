@@ -9,8 +9,8 @@ Selain itu, modul Formula Scheduler memanfaatkan struktur data seperti Stack, Qu
 
 # 👥 Tim Pengembang (Kelompok)
 NIM           |             Nama Lengkap      |                
-|25051030093  |   Adhi Suryo Kuncoro          |       
-|25051030097  |   Raihan fahreza augustha     |      
+|25051030093  |   ADHI SURYO KUNCORO          |       
+|25051030097  |   RAIHAN FAHREZA AUGUSTHA     |      
 |25051030106  |   MUHAMMAD FAUZAN NUR PRIBOWO |       
 |25051030123  |   LUCKY MAYLANDRA NUR SALEH   |       
 

@@ -21,4 +21,8 @@ Thumbs.db
 # Hasil eksperimen besar (simpan di Google Drive, bukan repo) 
 *.csv 
 *.pkl 
+HEAD
 data/large_* 
+=======
+data/large_* 
+

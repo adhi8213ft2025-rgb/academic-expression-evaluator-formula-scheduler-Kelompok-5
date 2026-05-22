@@ -1,0 +1,64 @@
+# =========================================================
+# Academic Expression Evaluator & Formula Scheduler
+# Requirements
+# =========================================================
+
+# Python minimum version
+python>=3.10
+
+pytest>=8.0.0
+pytest-benchmark>=5.0.0
+
+# =========================================================
+# Project Modules
+# =========================================================
+# bst.py                 -> Binary Search Tree
+# graph.py               -> Directed Acyclic Graph (DAG)
+# linked_list.py         -> Linked List
+# queue_ll.py            -> Queue Linked List
+# stack.py               -> Stack
+#
+# test_bst.py            -> Unit Testing BST
+# test_graph.py          -> Unit Testing Graph
+# test_linked_list.py    -> Unit Testing Linked List
+# test_queue_ll.py       -> Unit Testing Queue
+# test_stack.py          -> Unit Testing Stack
+#
+# No external libraries required.
+# Uses Python Standard Library only.
+
+AI_Log/
+│
+├── docs/
+│   ├── laporan_final_calculator.pdf
+│   └── slide_presentasi.pdf
+│
+├── experiments/
+│
+├── src/
+│   ├── data_structures/
+│   │   ├── bst.py
+│   │   ├── graph.py
+│   │   ├── linked_list.py
+│   │   ├── queue_ll.py
+│   │   └── stack.py
+│   │
+│   └── modules/
+│   │    ├──BST_Tabel_Variable.py
+|   │    ├──CLI_Kalkulator.py
+|   │    ├──Evaluasi_Postfix.py
+|   │    ├──Expression_Tree.py
+|   │    ├──Graph_Dependensi_Formula.py
+|   │    ├──Konversi_Infix_To_Postfix.py
+|   │    
+|   └── main.py
+├── tests/
+│   ├── test_bst.py
+│   ├── test_graph.py
+│   ├── test_linked_list.py
+│   ├── test_queue_ll.py
+│   └── test_stack.py
+│
+├── requirements.txt
+├── README.md
+└── .gitignore

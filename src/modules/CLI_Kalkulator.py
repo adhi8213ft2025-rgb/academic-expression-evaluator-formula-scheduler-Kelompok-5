@@ -273,16 +273,7 @@ def jalankan_kalkulator_cli():
     print("  TREE <ekspresi>                — tampilkan pohon ekspresi")
     print("  VARS                           — lihat semua variabel")
     print("  EXIT                           — keluar")
-    print()
-    print("Contoh:")
-    print("  SET a 3")
-    print("  SET b 4")
-    print("  SET c 2")
-    print("  ASSIGN F1 = a + b")
-    print("  ASSIGN F2 = F1 * c")
-    print("  ASSIGN F3 = F2 / F1")
-    print("  ASSIGN F4 = F3 + F2")
-    print()
+  
 
     while True:
         try:

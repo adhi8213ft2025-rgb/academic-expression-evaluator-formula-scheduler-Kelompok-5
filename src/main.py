@@ -291,4 +291,8 @@ def main():
         print(MENU)
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     main()
+=======
+    main()
+>>>>>>> 1d28dbe3da7703ac196c02081dd797206a4649b7
